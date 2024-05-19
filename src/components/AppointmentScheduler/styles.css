@@ -1,3 +1,26 @@
-h2 {
-  background-color: red;
+.appointment-container {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.appointment-container .body .calender-container {
+  min-width: 300px;
+  background-color: #ddd;
+  padding: 32px;
+}
+
+.appointment-container .body .slots-wrapper {
+  min-width: 300px;
+  background-color: #fff;
+}
+
+.appointment-container .footer {
+  background-color: #007c4f;
+  padding: 16px 20px;
+}
+
+.appointment-container .footer .text {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
 }

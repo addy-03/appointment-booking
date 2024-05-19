@@ -5,8 +5,12 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-      <Navbar />
-      <AppointmentScheduler />
+      <div className="app-container">
+        <Navbar />
+        <div className="main">
+          <AppointmentScheduler />
+        </div>
+      </div>
     </>
   );
 }
