@@ -1,8 +1,9 @@
 .slot-card-container {
   justify-content: center;
-  padding: 8px;
+  padding: 12px;
   border: 1px solid var(--primary-color);
-  border-radius: 6px;
+  border-radius: 10px;
+  min-width: 300px;
 
   color: var(--primary-color);
   font-size: 12px;
