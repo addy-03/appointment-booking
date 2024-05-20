@@ -5,9 +5,43 @@
 
 .appointment-container .body .calender-container {
   min-width: 300px;
+  max-width: 400px;
+  gap: 10px;
+
   background-color: #ddd;
   padding: 32px;
 }
+
+.appointment-container .body .calender-container .heading {
+  margin: 0;
+}
+
+/* .appointment-container
+  .body
+  .calender-container
+  .calender-wrapper
+  .react-calendar {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+.react-calendar__navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.react-calendar__tile,
+.react-calendar__navigation__arrow,
+.react-calendar__navigation__label {
+  border: none;
+  background: none;
+}
+
+.react-calendar__navigation__arrow {
+  font-size: 24px;
+  text-align: center;
+  place-content: center;
+} */
 
 .appointment-container .body .slots-wrapper {
   min-width: 300px;
