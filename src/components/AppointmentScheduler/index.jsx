@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles.css";
 import CustomCalender from "../Calender";
 import axios from "axios";
+import SlotCard from "../SlotCard";
 
 const AppointmentScheduler = () => {
   const [value, onChange] = useState(new Date());
@@ -37,6 +38,7 @@ const AppointmentScheduler = () => {
 
   useEffect(() => {
     console.log({ availableSlots });
+    availableSlots?.at(0)?.slots?.map((slot) => console.log({ slot }));
   }, [availableSlots]);
 
   return (
@@ -54,9 +56,16 @@ const AppointmentScheduler = () => {
             <CustomCalender value={value} onChange={onChange} />
           </div>
         </div>
-        <div className="slots-wrapper">{`${availableSlots
-          ?.at(0)
-          ?.slots?.reduce((a, b) => (a += "\n" + b.start_time))}`}</div>
+        <div className="flex-col slots-wrapper">
+          {availableSlots?.at(0)?.slots?.map((slot) => (
+            <SlotCard
+              key={`${slot?.start_time}-${slot?.end_time}`}
+              isSelected={false}
+              startDate={slot?.start_time}
+              endDate={slot?.end_time}
+            />
+          ))}
+        </div>
       </div>
       <div className="footer">
         <span className="text">
