@@ -7,6 +7,7 @@ import SlotCard from "../SlotCard";
 const AppointmentScheduler = () => {
   const [value, onChange] = useState(new Date());
   const [availableSlots, setAvailableSlots] = useState(null);
+  const [selectedSlot, setSelectedSlot] = useState("");
 
   const getAvailableSlots = async (date) => {
     axios
@@ -57,14 +58,21 @@ const AppointmentScheduler = () => {
           </div>
         </div>
         <div className="flex-col slots-wrapper">
-          {availableSlots?.at(0)?.slots?.map((slot) => (
-            <SlotCard
-              key={`${slot?.start_time}-${slot?.end_time}`}
-              isSelected={false}
-              startDate={slot?.start_time}
-              endDate={slot?.end_time}
-            />
-          ))}
+          {availableSlots?.at(0)?.slots?.map((slot) => {
+            const key = `${slot?.start_time}-${slot?.end_time}`;
+            return (
+              <SlotCard
+                key={key}
+                isSelected={selectedSlot === key}
+                startDate={slot?.start_time}
+                endDate={slot?.end_time}
+                onClick={() => {
+                  console.log("selected");
+                  setSelectedSlot(key);
+                }}
+              />
+            );
+          })}
         </div>
       </div>
       <div className="footer">

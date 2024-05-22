@@ -1,6 +1,6 @@
 import "./styles.css";
 
-const SlotCard = ({ isSelected, startDate, endDate }) => {
+const SlotCard = ({ isSelected, startDate, endDate, onClick }) => {
   console.log({ startDate, endDate });
   const getTime = (date) => {
     const tempDate = new Date(date);
@@ -21,7 +21,12 @@ const SlotCard = ({ isSelected, startDate, endDate }) => {
 
   return (
     <>
-      <div className="flex-row slot-card-container">
+      <div
+        className={`${
+          isSelected ? "slot-card-selected" : ""
+        } flex-row slot-card-container`}
+        onClick={onClick}
+      >
         <span className="time-duration">{`${getTime(startDate)} - ${getTime(
           endDate
         )}`}</span>
